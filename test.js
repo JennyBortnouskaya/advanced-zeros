@@ -16,7 +16,18 @@ describe('Zeros', () => {
   it('3', () => {
     const zerosCount = getZerosCount(82557730, 84);
     assert.equal(zerosCount, 13759618);
-  });
+  });module.exports = function getZerosCount(number, base) {
+    let result = 0;
+    for (let i = 0; i <= number; i++) {
+      let counter = i + 1;
+      while (counter % 5 == 0) {
+        counter = counter / 5;
+        result++;
+      }
+    }
+    return result;
+  } 
+  
 
   it('4', () => {
     const zerosCount = getZerosCount(14423541, 193);
